@@ -1,16 +1,36 @@
+const formulario = document.getElementById('formulario');
+
 const email = document.getElementById("mail");
 const number = document.getElementById("phone");
-const name = document.getElementById("username");
+const username = document.getElementById("username");
 const address = document.getElementById("address");
 const city = document.getElementById("city");
 const  postalCode= document.getElementById("postalcode");
+const bnt = document.getElementById("btn");
 
+formulario.addEventListener("submit", e =>{
+    e.preventDefault()
+    let warnings = ""
+    let entrar = false
+    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
+    parrafo.innerHTML = ""
 
-document.addEventListener("submit", e =>{
-    if (name.length <= 35 || /^\s+$/.test(name)) 
-    {
-        document.getElementById("username").focus();
-        document.getElementById("username").style.borderColor="green";
-        alert('Nice')
+    if(username.value.length <6){
+        warnings += `El nombre no es valido <br>`
+        entrar = true
+    }
+    if(!regexEmail.test(email.value)){
+        warnings += `El email no es valido <br>`
+        entrar = true
+    }
+    if(pass.value.length < 8){
+        warnings += `La contraseña no es valida <br>`
+        entrar = true
+    }
+
+    if(entrar){
+        parrafo.innerHTML = warnings
+    }else{
+        parrafo.innerHTML = "Enviado"
     }
 })

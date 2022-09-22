@@ -382,13 +382,21 @@ footer{
         top: 620px;
         background: #F2994A;
         border-radius: 12px;
+        cursor: pointer;
     }
-    footer{
+    .warnings{
+        width: 200px;
+        text-align: center;
+        margin: auto;
+        color: #B06AB3;
+        padding-top: 20px;
+    }
+    .autor{
         position: relative;
         width: 291px;
         height: 17px;
         left: 42px;
-        top: 725px;
+        top: 10075px;
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 600;
